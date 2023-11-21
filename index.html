@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my firt page</title>
   </head>
-  <body>
+  <body style="background-color:rgb(246, 252, 239);">
     <header>
       <h1>
         &nbsp;My name is Anamaria Maldonado
@@ -101,23 +101,6 @@
                 </li>
             </dl>
     </section><!--end -->
-    <section>
-        <form action="index.html" method="post">
-            <h3>ask me a question</h3>
-            <fieldset>
-                <label for="name">name:</label>
-                <br>
-                <input type="text" id="name" name="user_name">
-                <br>
-            </fieldset>
-            <fieldset>
-                <label type="text">question</label>
-                <br>
-                <textarea id="question" name="user_question" rows="9" cols="6"></textarea>
-             </fieldset>
-            <button type="submit">submit</button>
-        </form>
-    </section>
     
     <section id="skills"> 
         <h2><em>Skills</em></h2>
@@ -125,6 +108,33 @@
         <ul>
         </ul>
     </section>
+    </section>
+    <section>
+        <h2>"Leave a Message"</h2>
+        <form name = "leave_message" action="index.html" method="post">
+            <label for=" UserName">Name</label>
+            <br>
+            <input  type = "text" id = "UserName" name = "UserName " placeholder="enter your name">
+            <br>
+            <label for="UserEmail">Email Address</label>
+            <br>
+            <input type = "email" id = "UserEmail" name="UserEmail" placeholder="enter your email">
+            <br>
+            <label for="UserMessage">Message</label>
+            <br>
+            <textarea name = "UserMessage" placeholder="write your Message" rows="2" cols="20"></textarea>
+            <br>
+            <button type = "submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </section>
+    <section id = "Message">
+        <fieldset>
+            <legend><h2>Messages</h2></legend>
+            <ul></ul>
+        </fieldset>
+    </section>
+
     <section class="connect" id="connect">
         <h4><em>Connect</em></h4>
         <a href="mailto:anamariamaldonado1994@gmail.com?suject=hi%20there!"><small>anamariamaldonado1994@gmail.com &nbsp;</small></a>
@@ -136,8 +146,7 @@
                 <small>zip code: 27703.</small><br>
         </address>
     </section>
-    <footer> 
-        
+    <footer>  
     </footer>
     <script src="js/index.js">
         
