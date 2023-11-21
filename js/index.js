@@ -44,3 +44,54 @@ btnToggle.addEventListener("click", () => {
     skillList.style.display = "none"; //show list
   }
 });
+
+/*lesson 4.3 */
+/* Handle Message Form Submit */
+const messageForm = document.querySelector('form[name="leave_message"]');
+const messageFormButton = messageForm.querySelector('button[type="submit"]');
+const messageSection = document.getElementById("Message"); // Obtain the #messages section by id
+const messageList = messageSection.querySelector("ul"); // Query the messageSection to find ul element
+
+messageForm.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent form submission y pg reload
+  /* Obtain values from form */
+  const elements = event.target.elements;
+  const name = elements.UserName.value;
+  const email = elements.UserEmail.value;
+  const userMessage = elements.UserMessage.value;
+  /* Create a new listItem to display  msm */
+  const newMessage = document.createElement("li");
+  newMessage.innerHTML = `<strong>${name}</strong> (${email}): ${userMessage}`;
+
+  /* create a remove button */
+  const removeButton = document.createElement("button");
+  removeButton.innerText = "remove";
+  removeButton.type = "button";
+  //add event listener for delate msm  clic botón "remove"
+  removeButton.addEventListener("click", (ev) => {
+    const entry = removeButton.parentNode;
+    entry.remove();
+    /* hide the msm section */
+    if (messageList.children.length === 0) {
+      messageSection.style.display = "none"; //hide
+    }
+  });
+
+  /*create a edit button */
+  const editButton = document.createElement("button");
+  editButton.innerHTML = "edit";
+  editButton.type = "button";
+  editButton.addEventListener("click", () => {
+    const newText = window.prompt("enter the new message");
+    if (newText !== null) {
+      newMessage.innerHTML = `<strong>${name}</strong> (${email}): ${newText}`;
+    }
+  });
+
+  newMessage.appendChild(removeButton); //append removeButton to newMessage element
+  newMessage.appendChild(editButton);
+  messageForm.reset(); //clear the form fields
+  messageList.appendChild(newMessage); //add new msm to the list
+  messageSection.style.display = "block"; //show list msm
+  console.log(name, email, userMessage); // Log values to the console
+});
