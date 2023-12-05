@@ -10,16 +10,23 @@ footer.appendChild(copyright);
 
 /*create a new secton skill */
 var skills = [
-  "effective communication",
-  "customer service",
-  "teamwork",
-  "time management",
-  "decision making under pressure",
-  "adaptability",
-  "Organizational skills",
-  "Patience and empathy",
+  "Effective Communication",
+  "Customer Service",
+  "Teamwork",
+  "Time Management",
+  "Decision Making Under Pressure",
+  "Adaptability",
+  "Organizational Skills",
+  "Patience and Empathy",
   "Multitasking",
-  "Financial awareness",
+  "Financial Awareness",
+  "Operational Analysis",
+  "Time Studies",
+  "Organizational Planning",
+  "Market Research and Marketing",
+  "Marketing Mix Strategies",
+  "Organizational Planning",
+  "Creation of Organizational Manuals",
 ];
 const skillSection = document.getElementById("skills"); // select section id=skill
 const skillsList = skillSection.querySelector("ul"); // find element  "ul" in skillSection
@@ -42,6 +49,30 @@ btnToggle.addEventListener("click", () => {
   } else {
     btnToggle.textContent = "show list";
     skillList.style.display = "none"; //show list
+  }
+});
+
+/*software skills */
+var skills2 = ["C++", "JavaScript", "HTML", "Git", "GitHub", "CSS"];
+
+const skillSection2 = document.getElementById("skills2");
+const skillsList2 = skillSection2.querySelector("ul");
+
+for (let i = 0; i < skills2.length; i++) {
+  const skill2 = document.createElement("li");
+  let skillsText2 = skills2[i];
+  skill2.innerText = skillsText2;
+  skillsList2.appendChild(skill2);
+}
+
+const btnToggle2 = document.querySelector(".btn-toggle2");
+btnToggle2.addEventListener("click", () => {
+  if (skillsList2.style.display === "none") {
+    btnToggle2.textContent = "software Skills (in process)";
+    skillsList2.style.display = "block";
+  } else {
+    btnToggle2.textContent = "software Skills (in process)";
+    skillsList2.style.display = "none";
   }
 });
 

@@ -1,0 +1,141 @@
+* {
+  background-color: rgb(246, 252, 239);
+  font-style: oblique; /*type of letter */
+  height: auto vh;
+}
+header {
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-width: 12px;
+  border-style: double;
+  border-bottom: doble;
+  border-color: teal teal;
+  /* los margenes separan las cajas entre elementos*/
+  margin-top: 20px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+.img {
+  float: right; /*put image on the right conner*/
+}
+img2 {
+  float: right;
+}
+/*horizontal navigation*/
+nav li {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: none;
+  font-size: large;
+}
+#about {
+  padding: 10px;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+footer {
+  margin: 8px;
+}
+h1 {
+  text-align: center;
+  color: teal;
+}
+h2,
+#connect {
+  color: teal;
+  padding: 10px;
+}
+p,
+h3,
+dl {
+  color: olivedrab;
+  letter-spacing: 1px;
+}
+#skills,
+#skills2 {
+  font-weight: small;
+  color: olivedrab;
+}
+/*lines of the links and color*/
+a:link,
+a:visited {
+  text-decoration: none;
+  color: teal;
+}
+
+/*          styled blocks          */
+/*for skills*/
+#skills ul,
+#skills2 ul {
+  list-style: none; /*list numeration*/
+  padding: 0;
+  margin: 0;
+}
+#skills li,
+#skills2 li {
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px; /* space between blocks */
+  margin-bottom: 10px; /* space between blocks */
+}
+/*for Experience*/
+#experience li {
+  display: list-item;
+  list-style: numbers;
+  margin-right: 10px;
+  background-color: none;
+  padding: 10px;
+  border-radius: 105px; /* space between blocks */
+  margin-bottom: 10px; /* space between blocks */
+}
+/*Style the "Leave a Message" form elements and message section*/
+label {
+  font-size: 18px; /*tamano de letra*/
+  color: cadetblue;
+  padding: 3px;
+  margin: 6px;
+}
+form {
+  padding: auto;
+  margin: auto;
+}
+input,
+textarea {
+  padding: 8px;
+  color: olivedrab;
+  border-color: teal teal;
+  background: rgb(241, 241, 241);
+  width: none;
+  margin: 3px;
+}
+button {
+  color: white;
+  background-color: teal;
+  border-color: none;
+  padding: 3px;
+  margin: 3px;
+  padding-right: 5px;
+}
+#Message ul {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+}
+#Message li {
+  background-color: none; /* Color de fondo para cada bloque de mensaje */
+  padding: 10px;
+  border-radius: 15px; /* space between blocks */
+  margin-bottom: 10px;
+  color: olivedrab;
+  display: block;
+}
