@@ -1,9 +1,12 @@
 * {
-  background-color: rgb(246, 252, 239);
+  background-color: none;
   font-style: oblique; /*type of letter */
   height: auto vh;
+  padding-right: 10px;
 }
 header {
+  /*position: sticky;
+  top: 0;*/
   padding-top: 10px;
   padding-right: 15px;
   padding-bottom: 10px;
@@ -32,12 +35,15 @@ nav li {
   font-size: 14px;
   background-color: none;
   font-size: large;
+  text-decoration: none;
 }
 #about {
   padding: 10px;
 }
 body {
   margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 article,
 aside,
@@ -45,7 +51,10 @@ footer {
   margin: 8px;
 }
 h1 {
-  text-align: center;
+  /* position: absolute;
+  top: 50px;
+  left: 480px;
+  text-align: center;*/
   color: teal;
 }
 h2,
@@ -90,13 +99,16 @@ a:visited {
 }
 /*for Experience*/
 #experience li {
-  display: list-item;
+  /*display: list-item;*/
   list-style: numbers;
   margin-right: 10px;
-  background-color: none;
-  padding: 10px;
   border-radius: 105px; /* space between blocks */
   margin-bottom: 10px; /* space between blocks */
+  background-color: transparent; /* Set to transparent */
+  border: 1px solid #ccc;
+  padding: 10px;
+  flex-grow: 1;
+  flex-basis: 200px;
 }
 /*Style the "Leave a Message" form elements and message section*/
 label {
@@ -137,5 +149,43 @@ button {
   border-radius: 15px; /* space between blocks */
   margin-bottom: 10px;
   color: olivedrab;
-  display: block;
+  /*Update the "Leave a Message" form to use Flexbox or CSS Grid*/
+  display: flex;
+  /*min-height: 0vh;
+  justify-content: flex-start;
+  align-items: center;*/
+}
+
+/*lesson 4-5*/
+/*Change the layout of "Experience"*/
+.experience {
+  display: inline-flex; /*creating a flex container*/
+  flex-wrap: wrap; /* Allow items to wrap to the next line if not enough space (multy-lines)*/
+  flex-direction: column; /*row or column?*/
+  height: auto; /*altura*/
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*styles*/
+body {
+  display: flex;
+  flex-direction: column;
+}
+/*media queries*/ /*menu navegation*/
+@media (min-width: 769px) {
+  header,
+  .nav {
+    display: flex;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 1025px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
