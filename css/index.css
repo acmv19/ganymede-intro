@@ -189,3 +189,13 @@ body {
     justify-content: space-between;
   }
 }
+/*lesson 6-1*/
+#projects li {
+  color: teal;
+  list-style: circle;
+  margin-right: 10px;
+
+  background-color: transparent; /* Set to transparent */
+  border: 1px none;
+  padding: 10px;
+}

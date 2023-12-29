@@ -126,3 +126,28 @@ messageForm.addEventListener("submit", (event) => {
   messageSection.style.display = "block"; //show list msm
   console.log(name, email, userMessage); // Log values to the console
 });
+
+/*lesson 6-1*/
+
+/*Fetch GitHub Repositories*/
+var githubRequest = new XMLHttpRequest(); //create a XMLHttp request
+githubRequest.open("GET", "https://api.github.com/users/acmv19/repos"); //open or call request
+githubRequest.send(); //send the request
+/*Handle Response from Server*/
+githubRequest.addEventListener("load", function (event) {
+  var repositories = JSON.parse(this.response); // parsing JSON data
+  console.log(repositories);
+
+  /*Display Repositories in List*/
+  const projectSection = document.getElementById("projects");
+  const projectList = projectSection.querySelector("ul");
+  for (i = 0; i < repositories.length; i++) {
+    const project = document.createElement("li");
+    var anchorTag = document.createElement("a");
+    anchorTag.href = repositories[i].html_url;
+    anchorTag.innerText =
+      repositories[i]["name"] + " :  " + repositories[i]["description"];
+    project.appendChild(anchorTag);
+    projectList.appendChild(project);
+  }
+});
