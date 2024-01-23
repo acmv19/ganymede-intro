@@ -92,7 +92,7 @@ messageForm.addEventListener("submit", (event) => {
   const userMessage = elements.UserMessage.value;
   /* Create a new listItem to display  msm */
   const newMessage = document.createElement("li");
-  newMessage.innerHTML = `<strong>${name}</strong> (${email}): ${userMessage}`;
+  newMessage.innerHTML = `<strong>${name}</strong> <a href="mailto:${email}">${email} &nbsp</a>: ${userMessage}`;
 
   /* create a remove button */
   const removeButton = document.createElement("button");
@@ -108,14 +108,40 @@ messageForm.addEventListener("submit", (event) => {
     }
   });
 
-  /*create a edit button */
+  /* create a edit button */
   const editButton = document.createElement("button");
   editButton.innerHTML = "edit";
   editButton.type = "button";
   editButton.addEventListener("click", () => {
     const newText = window.prompt("enter the new message");
     if (newText !== null) {
-      newMessage.innerHTML = `<strong>${name}</strong> (${email}): ${newText}`;
+      const editedMessage = document.createElement("li");
+      editedMessage.innerHTML = `<strong>${name}</strong> <a href="mailto:${email}">${email} &nbsp</a>: ${newText}`;
+      // Create a new remove button for the edited msm
+      const newRemoveButton = document.createElement("button");
+      newRemoveButton.innerText = "remove";
+      newRemoveButton.type = "button";
+      newRemoveButton.addEventListener("click", (ev) => {
+        const entry = newRemoveButton.parentNode;
+        entry.remove();
+        if (messageList.children.length === 0) {
+          messageSection.style.display = "none";
+        }
+      });
+      // create a new edit button for edited msm
+      const NewEditedButton = document.createElement("button"); // replace current edit button with new one
+      NewEditedButton.innerText = "edit";
+      NewEditedButton.type = "button";
+      NewEditedButton.addEventListener("click", () => {
+        const newText = window.prompt("enter the new message"); // Similar edited logic as the original
+        if (newText !== null) {
+          entry.replaceWith(editedMessage); // create the edited message
+        }
+      });
+      editedMessage.appendChild(newRemoveButton);
+      editedMessage.appendChild(NewEditedButton);
+      const entry = editButton.parentNode; // Replace the original message with the edited message
+      entry.replaceWith(editedMessage);
     }
   });
 
