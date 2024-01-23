@@ -7,6 +7,7 @@
 header {
   /*position: sticky;
   top: 0;*/
+  background-color: #f0f0f0;
   padding-top: 10px;
   padding-right: 15px;
   padding-bottom: 10px;
@@ -61,6 +62,12 @@ h2,
 #connect {
   color: teal;
   padding: 10px;
+}
+.imgC {
+  float: right;
+}
+footer {
+  margin-left: 45%;
 }
 p,
 h3,
@@ -184,7 +191,14 @@ body {
   }
 }
 @media (min-width: 1025px) {
-  header {
+  header,
+  #connet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 769px) {
+  #connet {
     flex-direction: row;
     justify-content: space-between;
   }
